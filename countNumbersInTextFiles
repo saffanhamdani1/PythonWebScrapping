@@ -1,0 +1,15 @@
+import re
+name = raw_input("Enter file:")
+if len(name) < 1 : name = "actualdata.txt"
+handle = open(name)
+#for line in handle:
+x=handle.read()
+y=re.findall('([0-9]+)',x)
+print y
+print "total values found are %d",len(y)
+position=0
+for anynumber in y:
+    y[position]=int(anynumber)
+    position=position+1
+z=sum(y)
+print z
